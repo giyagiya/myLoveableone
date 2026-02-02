@@ -1,0 +1,59 @@
+body { background: #fff0f6; font-family: cursive; text-align: center; }
+.heart { font-size: 60px; margin: 30px 0 10px 0; animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{transform: scale(1);} 50%{transform: scale(1.1);} }
+.btn {
+  font-size: 2rem;
+  color: #fff;
+  background: #ff3b72;
+  border: none; border-radius: 1rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin: 2rem 1rem 0 1rem;
+  transition: background 0.2s;
+}
+.btn.no { background: #312244; position: relative; z-index: 10; }
+.reaction { margin-top: 2rem; font-size: 2.3rem; min-height:60px; min-width: 220px;}
+.hidden { display: none; }
+.confetti {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none; z-index: 99;
+  font-size: 2.5rem;
+  animation: fall 2s linear forwards;
+}
+@keyframes fall {
+  0% { top:-30px; opacity: 1;}
+  100% { top:90vh; opacity: 0;}
+}
+#no-btn.animating {
+  position: fixed !important;
+  transition: transform 0.7s cubic-bezier(.68,-0.6,.32,1.6), left 0.7s, top 0.7s;
+  will-change: transform, left, top;
+}
+.happy-gif {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 320px;
+  width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px #e4e2e8;
+}
+.love-message {
+  font-size: 2.5rem;
+  color: #e0245e;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.funny-video {
+  margin: 1.2rem auto 0 auto;
+  display: block;
+  max-width: 480px;
+  width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #fad3e1;
+  aspect-ratio: 16/9;
+}
+@media(max-width:600px){
+  .happy-gif, .funny-video { max-width:98vw;}
+  .love-message { font-size:2rem;}
+}
